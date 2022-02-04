@@ -26,7 +26,7 @@ architecture behaviour of test_pulse_gen is
     constant clkpulse   : Time := 500 ns; -- 1/2 periode horloge
 
     -- types/subtypes definitions
-
+    
     -- signal definitions
     signal E_CLK,E_P    : std_logic;
     signal E_RST        : std_logic; -- active low
@@ -54,7 +54,7 @@ end process P_TIMEOUT;
 --------------------------------------------------
 -- instantiation et mapping du composant registres
 pgen0 : entity work.pulse_gen(behaviour)
---			generic map (10)
+			generic map (10)
 			port map (MCLK => E_CLK,
                         RST => E_RST,
                         P => E_P);
@@ -66,7 +66,7 @@ begin
 
 	-- initialisations
 	E_RST <= '0';
-    E_CLK <= '0'; -- DON'T DO THAT ... guess why ???
+    --E_CLK <= '0'; -- DON'T DO THAT ... guess why ???
 
 	-- sequence RESET
 	E_RST <= '0';
